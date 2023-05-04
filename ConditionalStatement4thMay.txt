@@ -120,10 +120,19 @@ void main() {
 //If it is at least 8 characters long but does not contain an uppercase letter or a number, print
 //"Weak password: add an uppercase letter and a number". If it is less than 8 characters long, print "Password is too short".
 
+import 'dart:io';
 void main() {
-  print("enter the password to check whether its strong or not");
-  String? password = stdin.readLineSync()!;
-  if (password.trim().length >= 8){
-   if
+print("enter the password to check whether its strong or not");
+  String? password = stdin.readLineSync();
+  if (password!.length >= 8) {
+    if (password.contains(RegExp(r'[A-Z]')) && password.contains(RegExp(r'[0-9]'))) {
+      print("Strong password");
+    } else {
+      print("Weak password: add an uppercase letter and a number");
+    }
+  } else {
+    print("Password is too short");
   }
 }
+
+
