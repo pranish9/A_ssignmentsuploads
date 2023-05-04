@@ -133,6 +133,7 @@ print("enter the password to check whether its strong or not");
   } else {
     print("Password is too short");
   }
+  
 }
 
 
